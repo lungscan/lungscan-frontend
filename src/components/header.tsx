@@ -1,31 +1,27 @@
-'use client'
-
 import { ThemeSwitcher } from './theme/theme-switcher'
 import { Codesandbox, Home, Users } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { Separator } from './ui/separator'
-import { usePathname } from 'next/navigation'
 
 export function Header() {
-  const pathname = usePathname()
-
   return (
     <header className="flex items-center gap-3 justify-between">
       <div className="flex items-center gap-6">
-        <Codesandbox className="size-8" />
+        <div className="flex items-center gap-2">
+          <Codesandbox className="size-7 text-primary" />
+          <span className="font-semibold text-lg">Lungscan</span>
+        </div>
 
         <Separator orientation="vertical" className="!h-5" />
 
-        <nav className="flex items-center gap-6">
-          <NavLink href="/" path={pathname}>
-            <Home className={`size-4 ${pathname === '/' && 'text-primary'}`} />
+        <nav className="flex items-center gap-2">
+          <NavLink href="/">
+            <Home className="size-4" />
             Home
           </NavLink>
 
-          <NavLink href="/about" path={pathname}>
-            <Users
-              className={`size-4 ${pathname === '/about' && 'text-primary'}`}
-            />
+          <NavLink href="/about">
+            <Users className="size-4" />
             About
           </NavLink>
         </nav>

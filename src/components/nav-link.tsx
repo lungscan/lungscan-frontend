@@ -4,23 +4,24 @@ import Link from 'next/link'
 import { ComponentProps } from 'react'
 
 import { cn } from '@/lib/utils'
+import { usePathname } from 'next/navigation'
+import { Button } from './ui/button'
 
-type NavLinkProps = {
-  path: string
-} & ComponentProps<typeof Link>
+type NavLinkProps = ComponentProps<typeof Link>
 
-export function NavLink({ path, ...props }: NavLinkProps) {
-  const isCurrent = props.href.toString() === path
+export function NavLink(props: NavLinkProps) {
+  const pathname = usePathname()
+
+  const isCurrent = props.href.toString() === pathname
 
   return (
-    <Link
-      className={cn(
-        'text-muted-foreground relative flex items-center gap-2 py-2 text-sm',
-        isCurrent && 'font-medium text-foreground',
-      )}
-      {...props}
-    >
-      {props.children}
-    </Link>
+    <Button size="sm" variant={isCurrent ? 'outline' : 'ghost'} asChild>
+      <Link
+        className={cn('text-muted-foreground', isCurrent && 'text-foreground')}
+        {...props}
+      >
+        {props.children}
+      </Link>
+    </Button>
   )
 }
