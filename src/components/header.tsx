@@ -1,5 +1,5 @@
 import { ThemeSwitcher } from './theme/theme-switcher'
-import { Codesandbox, Home, Users } from 'lucide-react'
+import { BriefcaseMedical, Codesandbox, Home, Users } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { Separator } from './ui/separator'
 
@@ -23,6 +23,11 @@ export function Header() {
           <NavLink href="/about">
             <Users className="size-4" />
             About
+          </NavLink>
+
+          <NavLink href="/medical-notice">
+            <BriefcaseMedical className="size-4" />
+            medical notice
           </NavLink>
         </nav>
       </div>
