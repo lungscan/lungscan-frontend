@@ -32,22 +32,22 @@ export default function medicalNotice() {
           </p>
           <ul className="space-y-3">
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               <strong>False Positives: </strong> The AI may incorrectly identify
               a condition that is not present.
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               <strong>False Negatives:</strong> The AI may not detect existing
               pathologies.
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               <strong>Limited Context:</strong> The AI does not consider medical
               history, symptoms, or other tests.
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               <strong>Image Quality:</strong> Results depend on the quality and
               appropriateness of the provided image
             </li>
@@ -61,6 +61,7 @@ export default function medicalNotice() {
         </div>
 
         <Alert variant="destructive" className="mb-4">
+          <AlertTriangle className="size-4" />
           <AlertDescription>
             <p className="font-semibold">
               Seek IMMEDIATE medical attention if you have:
@@ -70,23 +71,23 @@ export default function medicalNotice() {
 
         <ul className="space-y-2">
           <li className="flex items-start">
-            <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             Severe or persistent chest pain
           </li>
           <li className="flex items-start">
-            <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             Extreme difficulty breathing
           </li>
           <li className="flex items-start">
-            <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             Coughing up blood
           </li>
           <li className="flex items-start">
-            <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             Persistent high fever
           </li>
           <li className="flex items-start">
-            <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
             Any other concerning respiratory symptom
           </li>
         </ul>
@@ -154,19 +155,19 @@ export default function medicalNotice() {
           </p>
           <ul className="space-y-2">
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               Use only as an educational or research tool
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               Maintain your independent clinical judgment
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               Respect all ethical and regulatory guidelines
             </li>
             <li className="flex items-start">
-              <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               Inform patients about the limitations of AI
             </li>
           </ul>
@@ -177,6 +178,7 @@ export default function medicalNotice() {
         <h2 className="text-2xl font-bold mb-4">Medical Data and Privacy</h2>
 
         <Alert variant="destructive" className="mb-4">
+          <AlertTriangle className="size-4" />
           <AlertDescription>
             <p className="leading-relaxed">
               <strong>Important:</strong> Do not submit images containing
@@ -203,6 +205,7 @@ export default function medicalNotice() {
         <h2 className="text-2xl font-bold mb-4">In Case of Emergency</h2>
 
         <Alert variant="destructive">
+          <AlertTriangle className="size-4" />
           <AlertTitle>
             In case of medical emergency, seek immediately:
           </AlertTitle>

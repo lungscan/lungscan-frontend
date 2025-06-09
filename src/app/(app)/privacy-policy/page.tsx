@@ -3,7 +3,7 @@ export default function PoliticaPrivacidade() {
     <main className="space-y-5">
       <div className="space-y-8">
         <section>
-          <h2 className="text-2xl font-bold mb-4">1. Introdução</h2>
+          <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
           <p className="leading-relaxed">
             LungScan AI is committed to protecting your privacy. This policy
             describes how we collect, use, and protect your information when
