@@ -5,6 +5,7 @@ import {
   Codesandbox,
   Home,
   Users,
+  Shield,
 } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { Separator } from './ui/separator'
@@ -39,6 +40,11 @@ export function Header() {
           <NavLink href="/terms-service">
             <ReceiptText className="size-4" />
             Terms of Service
+          </NavLink>
+
+          <NavLink href="/privacy-policy">
+            <Shield className="size-4" />
+            Privacy Policy
           </NavLink>
         </nav>
       </div>
