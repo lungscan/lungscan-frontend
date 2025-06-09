@@ -78,7 +78,7 @@ export function UploadFileForm() {
         className={cn(
           'h-80 p-3 flex flex-col items-center justify-center border-2 border-dashed rounded-md transition-colors bg-muted/40 text-center cursor-pointer',
           highlight
-            ? 'border-primary bg-primary/10'
+            ? 'border-primary bg-primary/10 border-solid'
             : 'border-zinc-300 dark:border-muted',
           errors?.file && 'border-destructive bg-destructive/10',
         )}
@@ -89,7 +89,7 @@ export function UploadFileForm() {
             className="hidden"
             {...register('file')}
             onChange={onFileChange}
-            accept="image/*"
+            accept="image/png, image/jpeg, image/jpg"
           />
 
           {preview ? (
@@ -112,8 +112,11 @@ export function UploadFileForm() {
           ) : (
             <>
               <ImageIcon className="size-10 text-primary" />
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm">
                 Drag and drop an image or click to select
+              </span>
+              <span className="text-xs text-muted-foreground">
+                (PNG, JPEG, JPG)
               </span>
             </>
           )}

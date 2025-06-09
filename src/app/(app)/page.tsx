@@ -1,8 +1,12 @@
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 import { UploadFileForm } from './_components/upload-file-form'
+import { AnalysisResults } from './_components/analysis-results'
+import { Separator } from '@/components/ui/separator'
 
 export default function Home() {
+  const result = true
+
   return (
     <main className="space-y-5">
       <Alert variant="destructive">
@@ -15,9 +19,16 @@ export default function Home() {
         </AlertDescription>
       </Alert>
 
-      <h1 className="text-xl font-bold">Send your X-Ray to Lungscan</h1>
+      <h1 className="text-2xl font-bold">Send your X-Ray to Lungscan</h1>
 
       <UploadFileForm />
+
+      {result && (
+        <>
+          <Separator />
+          <AnalysisResults />
+        </>
+      )}
     </main>
   )
 }
