@@ -1,4 +1,4 @@
-export default function PoliticaPrivacidade() {
+export default function PrivacyPolicyPage() {
   return (
     <main className="space-y-5">
       <div className="space-y-8">

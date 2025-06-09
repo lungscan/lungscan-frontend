@@ -1,7 +1,7 @@
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 
-export default function termsService() {
+export default function TermsOfServicePage() {
   return (
     <main className="space-y-5">
       <div className="space-y-8">

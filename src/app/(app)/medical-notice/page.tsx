@@ -1,7 +1,7 @@
 import { AlertTriangle } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
-export default function medicalNotice() {
+export default function MedicalNoticePage() {
   return (
     <main className="space-y-5">
       <section>

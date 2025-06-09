@@ -1,14 +1,8 @@
 import { ThemeSwitcher } from './theme/theme-switcher'
-import {
-  ReceiptText,
-  BriefcaseMedical,
-  Codesandbox,
-  Home,
-  Users,
-  Shield,
-} from 'lucide-react'
+import { Codesandbox, Home, Users } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { Separator } from './ui/separator'
+import { TermsDropdown } from './terms-dropdown'
 
 export function Header() {
   return (
@@ -31,25 +25,13 @@ export function Header() {
             <Users className="size-4" />
             About
           </NavLink>
-
-          <NavLink href="/medical-notice">
-            <BriefcaseMedical className="size-4" />
-            medical notice
-          </NavLink>
-
-          <NavLink href="/terms-service">
-            <ReceiptText className="size-4" />
-            Terms of Service
-          </NavLink>
-
-          <NavLink href="/privacy-policy">
-            <Shield className="size-4" />
-            Privacy Policy
-          </NavLink>
         </nav>
       </div>
 
-      <ThemeSwitcher />
+      <div className="flex items-center gap-2">
+        <TermsDropdown />
+        <ThemeSwitcher />
+      </div>
     </header>
   )
 }
