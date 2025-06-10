@@ -9,6 +9,8 @@ export default function Home() {
 
   return (
     <main className="space-y-5">
+      <h1 className="text-2xl font-bold">Send your X-Ray to Lungscan</h1>
+
       <Alert variant="destructive">
         <AlertTriangle className="size-4" />
         <AlertTitle>Important!</AlertTitle>
@@ -18,8 +20,6 @@ export default function Home() {
           and undergo appropriate medical examinations for any health concerns.
         </AlertDescription>
       </Alert>
-
-      <h1 className="text-2xl font-bold">Send your X-Ray to Lungscan</h1>
 
       <UploadFileForm />
 
