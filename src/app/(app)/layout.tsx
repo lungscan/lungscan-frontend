@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { Separator } from '@/components/ui/separator'
 import { PropsWithChildren } from 'react'
@@ -10,6 +11,8 @@ export default function AppLayout({ children }: PropsWithChildren) {
       <Separator />
 
       {children}
+
+      <Footer />
     </div>
   )
 }
