@@ -19,26 +19,26 @@ export function TermsDropdown() {
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="ghost">
           <ClipboardList className="size-4" />
-          <span className="sr-only">Terms</span>
+          <span className="sr-only">Termos</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
           <Link href="/medical-notice">
             <BriefcaseMedical className="size-4" />
-            Medical notice
+            Notícias médicas
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href="/terms-service">
             <ReceiptText className="size-4" />
-            Terms of service
+            Termos de serviço
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href="/privacy-policy">
             <Shield className="size-4" />
-            Privacy policy
+            Política de privacidade
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>

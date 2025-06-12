@@ -18,12 +18,12 @@ export function Header() {
         <nav className="flex items-center gap-2">
           <NavLink href="/">
             <Home className="size-4" />
-            Home
+            Início
           </NavLink>
 
           <NavLink href="/about">
             <Users className="size-4" />
-            About
+            Sobre
           </NavLink>
         </nav>
       </div>

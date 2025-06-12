@@ -53,32 +53,35 @@ export default function About() {
       <h1 className="text-2xl font-bold">About Lungscan</h1>
 
       <p className="text-justify text-muted-foreground">
-        <span className="text-foreground font-medium">Lungscan</span> is an
-        academic project developed as part of a university course in{' '}
+        <span className="text-foreground font-medium">Lungscan</span> é um
+        projeto acadêmico desenvolvido como parte de um curso universitário em{' '}
         <span className="text-foreground font-medium">
-          Artificial Intelligence Development Bootcamp
+          Bootcamp Desenvolvimento Inteligência Artificial
         </span>
-        . Its main goal is to simulate a real-world medical software system that
-        helps analyze lung images using AI techniques. The project aims to build
-        a simple web interface that demonstrates how artificial intelligence
-        could assist in lung disease detection and improve diagnostic workflows.
+        . Seu principal objetivo é simular um sistema de software médico do
+        mundo real que ajude a analisar imagens pulmonares usando técnicas de
+        IA. O projeto visa construir uma interface web simples que demonstre
+        como a inteligência artificial pode auxiliar na detecção de doenças
+        pulmonares e aprimorar os fluxos de trabalho de diagnóstico.
       </p>
 
       <Alert>
         <CircleAlert className="size-4" />
-        <AlertTitle>Important!</AlertTitle>
+        <AlertTitle>Importante!</AlertTitle>
         <AlertDescription>
-          This project is for educational purposes only. It does not provide
-          real medical diagnostics and should not be used for clinical purposes.
+          Esta ferramenta destina-se apenas a fins de pesquisa. Os resultados
+          não constituem um diagnóstico médico. Consulte sempre profissionais de
+          saúde qualificados e submeta-se a exames médicos adequados para
+          quaisquer problemas de saúde.
         </AlertDescription>
       </Alert>
 
       <section id="authors" className="space-y-3">
-        <h3 className="text-2xl font-bold">Authors</h3>
+        <h3 className="text-2xl font-bold">Autores</h3>
 
         <p className="text-justify text-muted-foreground">
-          Developed by these authors as part of the Artificial Intelligence
-          Bootcamp at [UNISAGRADO]:
+          Desenvolvido por esses autores como parte do Bootcamp Desenvolvimento
+          Inteligência Artificial na UNISAGRADO:
         </p>
 
         <ul className="space-y-2">

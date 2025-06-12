@@ -7,28 +7,26 @@ export default function MedicalNoticePage() {
       <section>
         <Alert variant="destructive">
           <AlertTriangle className="size-4" />
-          <AlertTitle>Important!</AlertTitle>
+          <AlertTitle>Importante!</AlertTitle>
           <AlertDescription>
-            <h1>
-              This platform is a research and technological demonstration tool.
-              DO NOT substitute professional medical evaluation and SHOULD not
-              be used for medical diagnosis.
-            </h1>
+            Esta plataforma é uma ferramenta de pesquisa e demonstração
+            tecnológica. NÃO substitui a avaliação médica profissional e NÃO
+            DEVE ser usada para diagnóstico médico.
           </AlertDescription>
         </Alert>
       </section>
 
       <div className="flex items-center space-x-3 mb-4">
         <h1 className="text-2xl font-bold">
-          Limitations of Artificial Intelligence
+          Limitações da inteligência artificial
         </h1>
       </div>
 
       <section>
         <div className="space-y-4">
           <p>
-            Although our AI technology is advanced, it has important limitations
-            that you should understand:
+            Embora nossa tecnologia de IA seja avançada, ela possui limitações
+            importantes que você deve entender:
           </p>
           <ul className="space-y-3">
             <li className="flex items-start">

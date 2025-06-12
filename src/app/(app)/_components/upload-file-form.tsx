@@ -102,18 +102,19 @@ export function UploadFileForm() {
               />
 
               <span className="text-sm text-muted-foreground">
-                {fileName || 'Drag and drop an image or click to select'}
+                {fileName ||
+                  'Arraste e solte uma imagem ou clique para selecionar'}
               </span>
             </>
           ) : errors?.file ? (
             <p className="text-sm text-destructive">
-              Select a valid image to continue
+              Selecione uma imagem válida para continuar
             </p>
           ) : (
             <>
               <ImageIcon className="size-10 text-primary" />
               <span className="text-sm">
-                Drag and drop an image or click to select
+                Arraste e solte uma imagem ou clique para selecionar
               </span>
               <span className="text-xs text-muted-foreground">
                 (PNG, JPEG, JPG)
@@ -131,7 +132,7 @@ export function UploadFileForm() {
             className="w-full"
             onClick={clearFile}
           >
-            Clean image
+            Limpar imagem
           </Button>
         )}
 
@@ -139,7 +140,7 @@ export function UploadFileForm() {
           {isSubmitting ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            'Send image'
+            'Enviar imagem'
           )}
         </Button>
       </div>
