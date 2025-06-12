@@ -1,66 +1,57 @@
-import { Button } from '@/components/ui/button'
-import { CircleAlert } from 'lucide-react'
-import { randomInt } from 'node:crypto'
+'use client'
 
-export function AnalysisResults() {
-  const percentage = randomInt(0, 100)
-  const percentage2 = randomInt(0, 100)
+import { pathologyData } from '@/mocks/pathology-data'
+import { PathologyDetailsSheet } from './pathology-details-sheet'
+import { Separator } from '@/components/ui/separator'
+import { useAnalysisResults } from '@/hooks/use-analysis-results'
+
+interface AnalysisResultsProps {
+  showResults: boolean
+}
+
+export function AnalysisResults({ showResults }: AnalysisResultsProps) {
+  const { analysisResults } = useAnalysisResults()
 
   return (
-    <div className="space-y-5">
-      <h1 className="text-2xl font-bold">Analysis results</h1>
+    <>
+      {showResults && analysisResults ? (
+        <>
+          <Separator />
 
-      <div className="space-y-3">
-        <div className="space-y-1 5">
-          <div className="flex items-center justify-between gap-3">
-            <p>Pathology example</p>
-            <div className="text-sm space-x-1">
-              <span className="font-medium">{percentage}</span>
-              <span className="text-muted-foreground text-xs">%</span>
-            </div>
+          <div className="space-y-5">
+            <h1 className="text-2xl font-bold">Análise dos resultados</h1>
+
+            {pathologyData.map((pathology) => {
+              return (
+                <div key={pathology.name} className="space-y-3">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between gap-3">
+                      <p>{pathology.displayName}</p>
+                      <div className="text-sm space-x-1">
+                        <span className="font-medium">
+                          {pathology.percentage}
+                        </span>
+                        <span className="text-muted-foreground text-xs">%</span>
+                      </div>
+                    </div>
+
+                    <div className="w-full bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-1.5 bg-primary"
+                        style={{ width: `${pathology.percentage}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {pathology.percentage > 50 && (
+                    <PathologyDetailsSheet pathology={pathology} />
+                  )}
+                </div>
+              )
+            })}
           </div>
-
-          <div className="w-full bg-muted rounded-full overflow-hidden">
-            <div
-              className="h-1.5 bg-primary"
-              style={{ width: `${percentage}%` }}
-            />
-          </div>
-        </div>
-
-        {percentage > 50 && (
-          <Button size="sm" variant="secondary" className="w-full">
-            <CircleAlert className="size-4" />
-            View this pathology details
-          </Button>
-        )}
-      </div>
-
-      <div className="space-y-3">
-        <div className="space-y-1 5">
-          <div className="flex items-center justify-between gap-3">
-            <p>Pathology example</p>
-            <div className="text-sm space-x-1">
-              <span className="font-medium">{percentage2}</span>
-              <span className="text-muted-foreground text-xs">%</span>
-            </div>
-          </div>
-
-          <div className="w-full bg-muted rounded-full overflow-hidden">
-            <div
-              className="h-1.5 bg-primary"
-              style={{ width: `${percentage2}%` }}
-            />
-          </div>
-        </div>
-
-        {percentage2 > 50 && (
-          <Button size="sm" variant="secondary" className="w-full">
-            <CircleAlert className="size-4" />
-            View this pathology details
-          </Button>
-        )}
-      </div>
-    </div>
+        </>
+      ) : null}
+    </>
   )
 }
