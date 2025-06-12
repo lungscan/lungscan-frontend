@@ -3,18 +3,17 @@
 import { pathologyData } from '@/mocks/pathology-data'
 import { PathologyDetailsSheet } from './pathology-details-sheet'
 import { Separator } from '@/components/ui/separator'
-import { useAnalysisResults } from '@/hooks/use-analysis-results'
+import { AnalysisResponse } from '@/http/api-client'
 
 interface AnalysisResultsProps {
   showResults: boolean
+  data?: AnalysisResponse
 }
 
-export function AnalysisResults({ showResults }: AnalysisResultsProps) {
-  const { analysisResults } = useAnalysisResults()
-
+export function AnalysisResults({ showResults, data }: AnalysisResultsProps) {
   return (
     <>
-      {showResults && analysisResults ? (
+      {showResults && data ? (
         <>
           <Separator />
 

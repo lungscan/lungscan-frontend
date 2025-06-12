@@ -7,13 +7,28 @@ export function Footer() {
 
       <Separator orientation="vertical" className="!h-5" />
 
-      {/* TODO */}
       <a
-        href="https://github.com/Buscavan"
-        className="text-sm text-muted-foreground font-medium hover:underline"
+        href="https://nextjs.org/"
+        className="text-sm text-muted-foreground hover:underline"
         target="_blank"
       >
-        Buscavan
+        Next.js
+      </a>
+
+      <a
+        href="https://ui.shadcn.com/"
+        className="text-sm text-muted-foreground hover:underline"
+        target="_blank"
+      >
+        Shadcn UI
+      </a>
+
+      <a
+        href="https://tailwindcss.com/"
+        className="text-sm text-muted-foreground hover:underline"
+        target="_blank"
+      >
+        Tailwind CSS
       </a>
     </footer>
   )

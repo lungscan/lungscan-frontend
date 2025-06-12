@@ -8,11 +8,10 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Image as ImageIcon, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
-import apiService from '@/http/api-client'
+import apiService, { AnalysisResponse } from '@/http/api-client'
 import { pathologyData } from '@/mocks/pathology-data'
 import { uploadImageAction } from '../actions'
 import Cookies from 'js-cookie'
-import { useAnalysisResults } from '@/hooks/use-analysis-results'
 
 const schema = z.object({
   file: z.instanceof(File),
@@ -20,9 +19,11 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-export function UploadFileForm() {
-  const { setAnalysisResults } = useAnalysisResults()
+interface UploadFileFormProps {
+  onUploadSuccess: (data: AnalysisResponse) => void
+}
 
+export function UploadFileForm({ onUploadSuccess }: UploadFileFormProps) {
   const {
     register,
     handleSubmit,
@@ -41,12 +42,7 @@ export function UploadFileForm() {
     try {
       const { response, updatedPathologyData } = await uploadImageAction(file)
 
-      setAnalysisResults({
-        success: true,
-        predictions: response.predictions,
-        pathologies_detected: response.pathologies_detected,
-        model_info: response.model_info,
-      })
+      onUploadSuccess(response)
 
       pathologyData.splice(0, pathologyData.length, ...updatedPathologyData)
 

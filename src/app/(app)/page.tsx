@@ -1,8 +1,7 @@
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
-import { UploadFileForm } from './_components/upload-file-form'
-import { AnalysisResults } from './_components/analysis-results'
 import { cookies } from 'next/headers'
+import { ClientWrapper } from './_components/client-wrapper'
 
 export default async function Home() {
   const cookie = await cookies()
@@ -23,9 +22,7 @@ export default async function Home() {
         </AlertDescription>
       </Alert>
 
-      <UploadFileForm />
-
-      <AnalysisResults showResults={showResults} />
+      <ClientWrapper showResults={showResults} />
     </main>
   )
 }
