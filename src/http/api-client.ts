@@ -110,15 +110,29 @@ export const apiService = {
     }
   },
 
-  base64ToFile(base64: string, filename: string = 'synthetic-image.png'): File {
-    const byteCharacters = atob(base64)
-    const byteNumbers = new Array(byteCharacters.length)
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i)
+  base64ToFile(base64: string, filename = 'image.png'): File {
+    if (base64.startsWith('data:')) {
+      const arr = base64.split(',')
+      const mime = arr[0].match(/:(.*?);/)?.[1] ?? 'image/png'
+      const bstr = atob(arr[1])
+      const u8arr = new Uint8Array(bstr.length)
+
+      for (let i = 0; i < bstr.length; i++) {
+        u8arr[i] = bstr.charCodeAt(i)
+      }
+
+      return new File([u8arr], filename, { type: mime })
+    } else {
+      // base64 sem prefixo
+      const bstr = atob(base64)
+      const u8arr = new Uint8Array(bstr.length)
+
+      for (let i = 0; i < bstr.length; i++) {
+        u8arr[i] = bstr.charCodeAt(i)
+      }
+
+      return new File([u8arr], filename, { type: 'image/png' })
     }
-    const byteArray = new Uint8Array(byteNumbers)
-    const blob = new Blob([byteArray], { type: 'image/png' })
-    return new File([blob], filename, { type: 'image/png' })
   },
 
   async fileToBase64(file: File): Promise<string> {
