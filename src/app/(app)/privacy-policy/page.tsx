@@ -3,41 +3,44 @@ export default function PrivacyPolicyPage() {
     <main className="space-y-5">
       <div className="space-y-8">
         <section>
-          <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
+          <h2 className="text-2xl font-bold mb-4">1. Introdução</h2>
           <p className="leading-relaxed">
-            LungScan AI is committed to protecting your privacy. This policy
-            describes how we collect, use, and protect your information when
-            using our chest X-ray image analysis platform.
+            O LungScan AI está comprometido com a proteção da sua privacidade.
+            Esta política descreve como coletamos, usamos e protegemos suas
+            informações ao utilizar nossa plataforma de análise de imagens de
+            raio-x de tórax.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">2. Information We Collect</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            2. Informações que Coletamos
+          </h2>
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg font-bold mb-2">2.1 Medical Images</h3>
+              <h3 className="text-lg font-bold mb-2">2.1 Imagens Médicas</h3>
               <p className="leading-relaxed">
-                We collect the X-ray images you upload for analysis. These
-                images are temporarily processed on our servers and are not
-                stored permanently.
+                Coletamos as imagens de raio-x que você envia para análise.
+                Essas imagens são processadas temporariamente em nossos
+                servidores e não são armazenadas permanentemente.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-medium mb-2">2.2 Usage Data</h3>
+              <h3 className="text-lg font-medium mb-2">2.2 Dados de Uso</h3>
               <p className="leading-relaxed">
-                We collect information about how you use our platform, including
-                analysis timestamps, types of files uploaded, and results
-                generated.
+                Coletamos informações sobre como você utiliza nossa plataforma,
+                incluindo horários de análise, tipos de arquivos enviados e
+                resultados gerados.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-mediummb-2">
-                2.3 Technical Information
+              <h3 className="text-lg font-medium mb-2">
+                2.3 Informações Técnicas
               </h3>
               <p className="leading-relaxed">
-                We collect technical information such as IP address, browser
-                type, operating system, and performance data to improve our
-                services.
+                Coletamos informações técnicas como endereço IP, tipo de
+                navegador, sistema operacional e dados de desempenho para
+                melhorar nossos serviços.
               </p>
             </div>
           </div>
@@ -45,102 +48,109 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">
-            3. How We Use Your Information
+            3. Como Usamos Suas Informações
           </h2>
           <ul className="space-y-2">
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Process and analyze X-ray images using artificial intelligence
+              Processar e analisar imagens de raio-x usando inteligência
+              artificial
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Improve the accuracy and efficiency of our algorithms
+              Melhorar a precisão e eficiência de nossos algoritmos
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Provide technical support and respond to your inquiries
+              Fornecer suporte técnico e responder às suas solicitações
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Conduct scientific research in an anonymized manner
+              Realizar pesquisas científicas de forma anonimizada
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">4. Data Protection</h2>
+          <h2 className="text-2xl font-bold mb-4">4. Proteção de Dados</h2>
           <p className="leading-relaxed mb-4">
-            We have implemented robust security measures to protect your
-            information:
+            Implementamos medidas de segurança robustas para proteger suas
+            informações:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Encryption of data in transit and at rest
+              Criptografia dos dados em trânsito e em repouso
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Restricted data access to authorized personnel only
+              Acesso restrito aos dados apenas para pessoal autorizado
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Automatic deletion of images after processing
+              Exclusão automática das imagens após o processamento
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Regular security audits
+              Auditorias de segurança regulares
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">5. Data Sharing</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            5. Compartilhamento de Dados
+          </h2>
           <p className="leading-relaxed">
-            We do not share, sell, or rent your personal information to third
-            parties. Anonymized data may be used for collaborative scientific
-            research, always respecting ethical and legal standards.
+            Não compartilhamos, vendemos ou alugamos suas informações pessoais
+            para terceiros. Dados anonimizados podem ser utilizados para
+            pesquisas científicas colaborativas, sempre respeitando padrões
+            éticos e legais.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">6. Your Rights</h2>
+          <h2 className="text-2xl font-bold mb-4">6. Seus Direitos</h2>
           <p className="leading-relaxed mb-4">
-            According to the General Data Protection Law (LGPD), you have the
-            right to:
+            De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem o
+            direito de:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Request access to your personal data
+              Solicitar acesso aos seus dados pessoais
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Request correction of inaccurate data
+              Solicitar a correção de dados incorretos
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Request deletion of your data
+              Solicitar a exclusão dos seus dados
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Revoke consent at any time
+              Revogar o consentimento a qualquer momento
             </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">7. Contact</h2>
+          <h2 className="text-2xl font-bold mb-4">7. Contato</h2>
           <p className="leading-relaxed">
-            For questions about this privacy policy or to exercise your rights,
-            please contact us through the contact page.
+            Para dúvidas sobre esta política de privacidade ou para exercer seus
+            direitos, entre em contato conosco pela página de contato.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">8. Changes to this Policy</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            8. Alterações nesta Política
+          </h2>
           <p className="leading-relaxed">
-            We may update this policy periodically. Significant changes will be
-            communicated through our website at least 30 days in advance.
+            Podemos atualizar esta política periodicamente. Mudanças
+            significativas serão comunicadas em nosso site com pelo menos 30
+            dias de antecedência.
           </p>
         </section>
       </div>

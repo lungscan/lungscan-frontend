@@ -31,23 +31,23 @@ export default function MedicalNoticePage() {
           <ul className="space-y-3">
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              <strong>False Positives: </strong> The AI may incorrectly identify
-              a condition that is not present.
+              <strong>Falsos positivos: </strong> A IA pode identificar
+              incorretamente uma condição que não está presente.
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              <strong>False Negatives:</strong> The AI may not detect existing
-              pathologies.
+              <strong>Falsos negativos:</strong> A IA pode não detectar
+              patologias existentes.
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              <strong>Limited Context:</strong> The AI does not consider medical
-              history, symptoms, or other tests.
+              <strong>Contexto limitado:</strong> A IA não considera histórico
+              médico, sintomas ou outros exames.
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              <strong>Image Quality:</strong> Results depend on the quality and
-              appropriateness of the provided image
+              <strong>Qualidade da imagem:</strong> Os resultados dependem da
+              qualidade e adequação da imagem fornecida.
             </li>
           </ul>
         </div>
@@ -55,14 +55,16 @@ export default function MedicalNoticePage() {
 
       <section>
         <div className="flex items-center space-x-3 mb-4">
-          <h2 className="text-2xl font-bold">When to Seek Medical Attention</h2>
+          <h2 className="text-2xl font-bold">
+            Quando procurar atendimento médico
+          </h2>
         </div>
 
         <Alert variant="destructive" className="mb-4">
           <AlertTriangle className="size-4" />
           <AlertDescription>
             <p className="font-semibold">
-              Seek IMMEDIATE medical attention if you have:
+              Procure ATENDIMENTO MÉDICO IMEDIATO se você tiver:
             </p>
           </AlertDescription>
         </Alert>
@@ -70,73 +72,73 @@ export default function MedicalNoticePage() {
         <ul className="space-y-2">
           <li className="flex items-start">
             <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-            Severe or persistent chest pain
+            Dor torácica intensa ou persistente
           </li>
           <li className="flex items-start">
             <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-            Extreme difficulty breathing
+            Dificuldade extrema para respirar
           </li>
           <li className="flex items-start">
             <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-            Coughing up blood
+            Tosse com sangue
           </li>
           <li className="flex items-start">
             <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-            Persistent high fever
+            Febre alta persistente
           </li>
           <li className="flex items-start">
             <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-            Any other concerning respiratory symptom
+            Qualquer outro sintoma respiratório preocupante
           </li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">Platform Purpose</h2>
+        <h2 className="text-2xl font-bold mb-4">Finalidade da plataforma</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-lg font-medium text-green-700 mb-3">
-              Appropriate Uses:
+              Usos apropriados:
             </h3>
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Scientific research
+                Pesquisa científica
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Medical education
+                Educação médica
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Technological demonstration
+                Demonstração tecnológica
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Learning about medical AI
+                Aprendizado sobre IA médica
               </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-medium text-red-700 mb-3">
-              Inappropriate Uses:
+              Usos inapropriados:
             </h3>
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Medical diagnosis
+                Diagnóstico médico
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Treatment decisions
+                Decisões de tratamento
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Replacement for medical consultation
+                Substituição de consulta médica
               </li>
               <li className="flex items-start">
                 <span className="inline-block size-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Unauthorized commercial use
+                Uso comercial não autorizado
               </li>
             </ul>
           </div>
@@ -145,85 +147,87 @@ export default function MedicalNoticePage() {
 
       <section>
         <div className="flex items-center space-x-3 mb-4">
-          <h2 className="text-2xl font-bold">Professional Responsibility</h2>
+          <h2 className="text-2xl font-bold">Responsabilidade profissional</h2>
         </div>
         <div className="space-y-4">
           <p className="leading-relaxed">
-            If you are a healthcare professional using this platform:
+            Se você é um profissional de saúde utilizando esta plataforma:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Use only as an educational or research tool
+              Use apenas como ferramenta educacional ou de pesquisa
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Maintain your independent clinical judgment
+              Mantenha seu julgamento clínico independente
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Respect all ethical and regulatory guidelines
+              Respeite todas as diretrizes éticas e regulatórias
             </li>
             <li className="flex items-start">
               <span className="inline-block size-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Inform patients about the limitations of AI
+              Informe os pacientes sobre as limitações da IA
             </li>
           </ul>
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">Medical Data and Privacy</h2>
+        <h2 className="text-2xl font-bold mb-4">Dados médicos e privacidade</h2>
 
         <Alert variant="destructive" className="mb-4">
           <AlertTriangle className="size-4" />
           <AlertDescription>
             <p className="leading-relaxed">
-              <strong>Important:</strong> Do not submit images containing
-              personally identifiable information. Remove all DICOM data,
-              metadata, and identifiers before uploading. Please see our Privacy
-              Policy for more information.
+              <strong>Importante:</strong> Não envie imagens contendo
+              informações pessoais identificáveis. Remova todos os dados DICOM,
+              metadados e identificadores antes de fazer o upload. Consulte
+              nossa Política de Privacidade para mais informações.
             </p>
           </AlertDescription>
         </Alert>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">Regulation and Compliance</h2>
+        <h2 className="text-2xl font-bold mb-4">Regulação e conformidade</h2>
         <p className="leading-relaxed">
-          This platform is not a medical device regulated by ANVISA or other
-          regulatory agencies. It does not have approval for clinical use.
-          Healthcare professionals should follow the guidelines of their
-          professional boards and use only approved tools for diagnosis and
-          treatment.
+          Esta plataforma não é um dispositivo médico regulado pela ANVISA ou
+          outros órgãos reguladores. Não possui aprovação para uso clínico.
+          Profissionais de saúde devem seguir as diretrizes de seus conselhos
+          profissionais e utilizar apenas ferramentas aprovadas para diagnóstico
+          e tratamento.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">In Case of Emergency</h2>
+        <h2 className="text-2xl font-bold mb-4">Em caso de emergência</h2>
 
         <Alert variant="destructive">
           <AlertTriangle className="size-4" />
           <AlertTitle>
-            In case of medical emergency, seek immediately:
+            Em caso de emergência médica, procure imediatamente:
           </AlertTitle>
           <AlertDescription>
             <ul className="list-inside list-disc text-sm">
-              <li>Nearest emergency room</li>
-              <li>Call 192 (SAMU)</li>
-              <li>Call 193 (Bombeiros)</li>
-              <li>Your trusted doctor</li>
+              <li>Pronto-socorro mais próximo</li>
+              <li>Ligue 192 (SAMU)</li>
+              <li>Ligue 193 (Bombeiros)</li>
+              <li>Seu médico de confiança</li>
             </ul>
           </AlertDescription>
         </Alert>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">Contact for Medical Issues</h2>
+        <h2 className="text-2xl font-bold mb-4">
+          Contato para questões médicas
+        </h2>
         <p className="leading-relaxed">
-          For questions about the medical aspects of this platform or to report
-          issues related to inappropriate medical use, please contact us through
-          the contact page.
+          Para dúvidas sobre aspectos médicos desta plataforma ou para relatar
+          problemas relacionados ao uso médico inadequado, entre em contato
+          conosco pela página de contato.
         </p>
       </section>
     </main>
