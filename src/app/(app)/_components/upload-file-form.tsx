@@ -7,6 +7,12 @@ import { useState, DragEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Image as ImageIcon, Loader2 } from 'lucide-react'
+import { toast } from 'sonner'
+import apiService from '@/http/api-client'
+import { pathologyData } from '@/mocks/pathology-data'
+import { uploadImageAction } from '../actions'
+import Cookies from 'js-cookie'
+import { useAnalysisResults } from '@/hooks/use-analysis-results'
 
 const schema = z.object({
   file: z.instanceof(File),
@@ -15,6 +21,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 export function UploadFileForm() {
+  const { setAnalysisResults } = useAnalysisResults()
+
   const {
     register,
     handleSubmit,
@@ -29,6 +37,55 @@ export function UploadFileForm() {
   const [fileName, setFileName] = useState('')
   const [preview, setPreview] = useState<string | null>(null)
 
+  async function handleUploadImage({ file }: FormData) {
+    try {
+      const { response, updatedPathologyData } = await uploadImageAction(file)
+
+      setAnalysisResults({
+        success: true,
+        predictions: response.predictions,
+        pathologies_detected: response.pathologies_detected,
+        model_info: response.model_info,
+      })
+
+      pathologyData.splice(0, pathologyData.length, ...updatedPathologyData)
+
+      toast.success('Análise concluida com sucesso')
+    } catch (error) {
+      if (
+        error instanceof Error ? error.message : 'Erro analisar imagem enviada!'
+      ) {
+        toast.error('Erro analisar imagem enviada!')
+      }
+    }
+  }
+
+  async function handleUploadAleatoryImage() {
+    try {
+      const response = await apiService.getRandomImage()
+
+      const defaultImage = apiService.base64ToFile(
+        response.image_base64,
+        'synthetic-lung-xray.png',
+      )
+
+      setValue('file', defaultImage, { shouldValidate: true })
+      setHighlight(true)
+      setFileName(defaultImage.name)
+      setPreview(URL.createObjectURL(defaultImage))
+
+      toast.success('Imagem aleatória gerada com sucesso')
+    } catch (error) {
+      if (
+        error instanceof Error
+          ? error.message
+          : 'Erro ao gerar imagem aleatória!'
+      ) {
+        toast.error('Erro ao gerar imagem aleatória!')
+      }
+    }
+  }
+
   function handleDrop(event: DragEvent<HTMLDivElement>) {
     event.preventDefault()
 
@@ -40,11 +97,15 @@ export function UploadFileForm() {
       setPreview(URL.createObjectURL(file))
       setHighlight(true)
     }
+
+    Cookies.remove('showResults')
   }
 
   function handleDragOver(event: DragEvent<HTMLDivElement>) {
     event.preventDefault()
     setHighlight(true)
+
+    Cookies.remove('showResults')
   }
 
   function onFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -56,6 +117,8 @@ export function UploadFileForm() {
       setPreview(URL.createObjectURL(file))
       setHighlight(true)
     }
+
+    Cookies.remove('showResults')
   }
 
   function clearFile() {
@@ -63,10 +126,8 @@ export function UploadFileForm() {
     setFileName('')
     setPreview(null)
     setHighlight(false)
-  }
 
-  function handleUploadImage(file: FormData) {
-    console.log(file)
+    Cookies.remove('showResults')
   }
 
   return (
@@ -142,6 +203,15 @@ export function UploadFileForm() {
           ) : (
             'Enviar imagem'
           )}
+        </Button>
+
+        <Button
+          type="button"
+          variant="ghost"
+          className="w-full"
+          onClick={handleUploadAleatoryImage}
+        >
+          Gerar imagem aleatória
         </Button>
       </div>
     </form>

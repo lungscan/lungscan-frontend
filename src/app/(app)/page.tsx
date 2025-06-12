@@ -2,10 +2,11 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AlertTriangle } from 'lucide-react'
 import { UploadFileForm } from './_components/upload-file-form'
 import { AnalysisResults } from './_components/analysis-results'
-import { Separator } from '@/components/ui/separator'
+import { cookies } from 'next/headers'
 
-export default function Home() {
-  const result = true
+export default async function Home() {
+  const cookie = await cookies()
+  const showResults = Boolean(cookie.get('showResults')?.value)
 
   return (
     <main className="space-y-5">
@@ -24,12 +25,7 @@ export default function Home() {
 
       <UploadFileForm />
 
-      {result && (
-        <>
-          <Separator />
-          <AnalysisResults />
-        </>
-      )}
+      <AnalysisResults showResults={showResults} />
     </main>
   )
 }

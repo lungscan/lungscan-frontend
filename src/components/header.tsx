@@ -3,6 +3,7 @@ import { Codesandbox, Home, Users } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { Separator } from './ui/separator'
 import { TermsDropdown } from './terms-dropdown'
+import { CheckHealthApi } from './check-health-api'
 
 export function Header() {
   return (
@@ -29,6 +30,8 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-2">
+        <CheckHealthApi />
+        <Separator orientation="vertical" className="!h-5" />
         <TermsDropdown />
         <ThemeSwitcher />
       </div>
