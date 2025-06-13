@@ -30,6 +30,14 @@ export function Footer() {
       >
         Tailwind CSS
       </a>
+
+      <a
+        href="https://mlmed.org/torchxrayvision/"
+        className="text-sm text-muted-foreground hover:underline"
+        target="_blank"
+      >
+        TorchXrayVision
+      </a>
     </footer>
   )
 }
