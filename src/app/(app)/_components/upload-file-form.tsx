@@ -60,8 +60,16 @@ export function UploadFileForm({ onUploadSuccess }: UploadFileFormProps) {
     try {
       const response = await apiService.getRandomImage()
 
+      if (!response.image_base64) {
+        toast.error('Imagem base64 inválida')
+      }
+
+      const base64Data = response.image_base64.startsWith('data:')
+        ? response.image_base64
+        : `data:${response.image_format || 'image/png'};base64,${response.image_base64}`
+
       const defaultImage = apiService.base64ToFile(
-        response.image_base64,
+        base64Data,
         'synthetic-lung-xray.png',
       )
 
@@ -72,13 +80,12 @@ export function UploadFileForm({ onUploadSuccess }: UploadFileFormProps) {
 
       toast.success('Imagem aleatória gerada com sucesso')
     } catch (error) {
-      if (
+      console.error('Erro ao processar imagem aleatória:', error)
+      toast.error(
         error instanceof Error
           ? error.message
-          : 'Erro ao gerar imagem aleatória!'
-      ) {
-        toast.error('Erro ao gerar imagem aleatória!')
-      }
+          : 'Erro ao gerar imagem aleatória!',
+      )
     }
   }
 
