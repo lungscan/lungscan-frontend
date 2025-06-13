@@ -83,34 +83,55 @@ export const apiService = {
 
   async getRandomImage(analyze: boolean = false): Promise<RandomImageResponse> {
     try {
-      console.log('API Base URL:', API_BASE_URL) // Debug log
       const response = await api.get('/random-image', {
         params: { analyze: analyze.toString() },
+        responseType: 'arraybuffer', // Handle binary response
       })
 
-      console.log('Random Image Response:', response.data) // Debug log
+      // Check if response is a PNG file (check for PNG header)
+      const buffer = new Uint8Array(response.data)
+      const isPNG =
+        buffer[0] === 0x89 &&
+        buffer[1] === 0x50 &&
+        buffer[2] === 0x4e &&
+        buffer[3] === 0x47
 
-      if (!response.data || !response.data.image_base64) {
+      if (isPNG) {
+        // Convert binary data to base64
+        const base64 = btoa(
+          new Uint8Array(response.data).reduce(
+            (data, byte) => data + String.fromCharCode(byte),
+            '',
+          ),
+        )
+
+        return {
+          success: true,
+          dataset: 'synthetic',
+          image_index: 0,
+          image_base64: base64,
+          image_format: 'image/png',
+          image_size: [0, 0], // Size will be determined when image is loaded
+          metadata: {},
+        }
+      }
+
+      // If not PNG, try to parse as JSON
+      const textDecoder = new TextDecoder('utf-8')
+      const jsonText = textDecoder.decode(response.data)
+      const jsonData = JSON.parse(jsonText)
+
+      if (!jsonData.image_base64) {
         throw new Error(
           'Resposta inválida da API: imagem base64 não encontrada',
         )
       }
 
-      return response.data
+      return jsonData
     } catch (error: unknown) {
       console.error('Erro ao obter imagem sintética:', error)
-      if (axios.isAxiosError(error)) {
-        if (error.response?.data?.message) {
-          throw new Error(error.response.data.message)
-        }
-        if (error.code === 'ECONNREFUSED') {
-          throw new Error(
-            'Não foi possível conectar ao servidor. Verifique se a API está rodando.',
-          )
-        }
-        if (error.response?.status === 404) {
-          throw new Error('Endpoint de imagem aleatória não encontrado')
-        }
+      if (axios.isAxiosError(error) && error.response?.data?.message) {
+        throw new Error(error.response.data.message)
       }
       throw new Error('Erro ao gerar imagem de teste')
     }

@@ -1,0 +1,11 @@
+API Base URL: https://lungscan-backend.onrender.com
+layout-340805c406a1f352.js?dpl=dpl_3cHQ1kPvV3SNvhM3Dr8VBfoRWeKb:1 Random Image Response: �PNG
+
+
+20-e679436d2d67cdf5.…NvhM3Dr8VBfoRWeKb:1 Erro ao obter imagem sintética: Error: Resposta inválida da API: imagem base64 não encontrada
+    at Object.getRandomImage (layout-340805c406a1f…Dr8VBfoRWeKb:1:7369)
+    at async k (page-c61389e671b2072…Dr8VBfoRWeKb:1:5861)
+
+20-e679436d2d67cdf5.…NvhM3Dr8VBfoRWeKb:1 Erro ao processar imagem aleatória: Error: Erro ao gerar imagem de teste
+    at Object.getRandomImage (layout-340805c406a1f…Dr8VBfoRWeKb:1:7888)
+    at async k (page-c61389e671b2072…Dr8VBfoRWeKb:1:5861)

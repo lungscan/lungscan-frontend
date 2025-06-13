@@ -60,15 +60,10 @@ export function UploadFileForm({ onUploadSuccess }: UploadFileFormProps) {
     try {
       const response = await apiService.getRandomImage()
 
-      console.log('API Response:', response) // Debug log
-
-      if (!response || !response.image_base64) {
-        console.error('Invalid API response:', response)
-        toast.error('Resposta inválida da API')
-        return
+      if (!response.image_base64) {
+        toast.error('Imagem base64 inválida')
       }
 
-      // Create a proper data URL if the base64 doesn't have the prefix
       const base64Data = response.image_base64.startsWith('data:')
         ? response.image_base64
         : `data:${response.image_format || 'image/png'};base64,${response.image_base64}`
