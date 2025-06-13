@@ -18,7 +18,7 @@ export function AnalysisResults({ showResults, data }: AnalysisResultsProps) {
           <Separator />
 
           <div className="space-y-5">
-            <div className="inline-flex gap-2">
+            <div className="inline-flex items-end gap-2">
               <h1 className="text-2xl font-bold">Análise dos resultados</h1>
               <span className="text-xs text-muted-foreground">
                 Modelo: {data.model_info.model_name}
