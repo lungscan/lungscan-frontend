@@ -83,15 +83,34 @@ export const apiService = {
 
   async getRandomImage(analyze: boolean = false): Promise<RandomImageResponse> {
     try {
+      console.log('API Base URL:', API_BASE_URL) // Debug log
       const response = await api.get('/random-image', {
         params: { analyze: analyze.toString() },
       })
 
+      console.log('Random Image Response:', response.data) // Debug log
+
+      if (!response.data || !response.data.image_base64) {
+        throw new Error(
+          'Resposta inválida da API: imagem base64 não encontrada',
+        )
+      }
+
       return response.data
     } catch (error: unknown) {
       console.error('Erro ao obter imagem sintética:', error)
-      if (axios.isAxiosError(error) && error.response?.data?.message) {
-        throw new Error(error.response.data.message)
+      if (axios.isAxiosError(error)) {
+        if (error.response?.data?.message) {
+          throw new Error(error.response.data.message)
+        }
+        if (error.code === 'ECONNREFUSED') {
+          throw new Error(
+            'Não foi possível conectar ao servidor. Verifique se a API está rodando.',
+          )
+        }
+        if (error.response?.status === 404) {
+          throw new Error('Endpoint de imagem aleatória não encontrado')
+        }
       }
       throw new Error('Erro ao gerar imagem de teste')
     }
